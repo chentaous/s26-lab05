@@ -26,7 +26,7 @@ public interface Shape {
     default void draw(Writer writer, Line[] lines) {
         try {
             for (Line line : lines) {
-                // TODO: what is the purpose of the code there?
+                // TODO: what is the purpose of the code there? Strategy Pattern
                 if (writer instanceof JPEGWriter) {
                     writer.write(line.toJPEG());
                 } else if (writer instanceof PNGWriter) {

@@ -29,11 +29,11 @@ public class Drawing {
      * @param filename file name
      */
     public void draw(String format, String filename) {
-        // TODO: Do you notice any issues here?
+        // TODO: Do you notice any issues here? Strategy Pattern
         if (format.equals("jpeg")) {
             try (Writer writer = new JPEGWriter(filename + ".jpeg")) {
                 for (Shape shape : this.shapes) {
-                    // TODO: What is the issue of the behavior here?
+                    // TODO: What is the issue of the behavior here? Composite Pattern
                     Line[] lines = shape.toLines();
                     shape.draw(writer, lines);
                 }
@@ -52,4 +52,3 @@ public class Drawing {
         }
     }
 }
-
